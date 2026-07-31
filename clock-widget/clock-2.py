@@ -26,7 +26,7 @@ while True:
     time_str = now.strftime("%H:%M:%S")
     
     payload = {
-        "app_id": APP_ID,
+        "application_name": APP_ID,
         "elements": [
             {
                 "id": "date",

@@ -30,7 +30,7 @@ def get_weather(lat, lon):
 
 def display_text(text, timeout=6, font="medium", width=72, scroll_rate=60, color="#FFFFFFFF"):
     payload = {
-        "app_id": APP_ID,
+        "application_name": APP_ID,
         "elements": [
             {
                 "id": "text0",

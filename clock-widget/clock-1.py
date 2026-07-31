@@ -26,7 +26,7 @@ def center_x(text, font):
 
 # Prepare JSON payload
 payload = {
-    "app_id": APP_ID,
+    "application_name": APP_ID,
     "elements": [
         {
             "id": "date",

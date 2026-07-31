@@ -115,7 +115,7 @@ def draw_chart_image(history, width=WIDTH, height=HEIGHT):
 
 
 def upload_image(server: str, app_id: str, filename: str, image_bytes: bytes):
-    url = f"http://{server}/api/assets/upload?app_id={app_id}&file={filename}"
+    url = f"http://{server}/api/assets/upload?application_name={app_id}&file={filename}"
     headers = {"Content-Type": "application/octet-stream"}
     try:
         resp = requests.post(url, headers=headers, data=image_bytes, timeout=5)
@@ -129,7 +129,7 @@ def upload_image(server: str, app_id: str, filename: str, image_bytes: bytes):
 def send_draw_command(server: str, app_id: str, image_path: str, ping_text: str, timeout=2):
     url = f"http://{server}/api/display/draw"
     payload = {
-        "app_id": app_id,
+        "application_name": app_id,
         "elements": [
             {
                 "id": "img",

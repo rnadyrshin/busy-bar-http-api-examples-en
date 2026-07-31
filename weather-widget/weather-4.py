@@ -52,14 +52,14 @@ def get_weather(lat, lon):
 def upload_icon(local_path, filename="icon.png"):
     with open(local_path, "rb") as f:
         data = f.read()
-    url = f"http://{DEVICE_IP}/api/assets/upload?app_id={APP_ID}&file={filename}"
+    url = f"http://{DEVICE_IP}/api/assets/upload?application_name={APP_ID}&file={filename}"
     resp = requests.post(url, data=data, headers={"Content-Type": "application/octet-stream"})
     resp.raise_for_status()
     return filename
 
 def display_weather(city, temp, icon_path):
     payload = {
-        "app_id": APP_ID,
+        "application_name": APP_ID,
         "elements": [
             {
                 "id": "icon",
